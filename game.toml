@@ -1,0 +1,38 @@
+# game.toml — Teenage Mutant Ninja Turtles: The Hyperstone Heist (USA, 1992)
+# 68000, 1024KB (1MB) ROM, no SRAM, no mapper
+# CRC32 (USA): 0x679C41DE
+# Product serial: T-95066-00
+
+[game]
+output_prefix = "tmnt"
+discovery_files = []
+
+# ---------------------------------------------------------------------------
+# Generic 68000 Genesis RAM layout defaults (unmapped placeholder addresses).
+# ---------------------------------------------------------------------------
+[ram_layout]
+game_mode      = 0xFFF600
+vint_runcount  = 0xFFFE0C
+vint_routine   = 0xFFF62A
+plc_pending    = 0xFFF6F8
+initial_ssp    = 0xFFFE00
+vbla_stack     = 0xFFD000
+intr_stack     = 0xFFD000
+player_object  = 0xFFD000
+level_modes    = [0x08, 0x0C]
+
+# ---------------------------------------------------------------------------
+# Widescreen disabled (requires game-specific instruction addresses).
+# ---------------------------------------------------------------------------
+[widescreen]
+capable          = false
+max_extra_cells  = 0
+eligible_modes   = []
+
+# ---------------------------------------------------------------------------
+# Empty function overrides (relying on automatic reset-vector discovery +
+# 68000 interpreter fallback).
+# ---------------------------------------------------------------------------
+[functions]
+extra = []
+blacklist = []
